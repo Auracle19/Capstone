@@ -29,10 +29,10 @@ function Nav() {
                     </div>
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
-                        <Link to="/" className="text-slate-200 lg:linkS no-underline">Home</Link>
-                        <Link to="/tutorials" className="text-slate-200 lg:linkS no-underline">Tutorials</Link>
-                        <Link to="/services" className="text-slate-200 lg:linkS no-underline">Services</Link>
-                        <Link to="/exercises" className="text-slate-200 lg:linkS no-underline">Exercises</Link>
+                        <Link to="/" className="nav-underline">Home</Link>
+                        <Link to="/tutorials" className="nav-underline">Tutorials</Link>
+                        <Link to="/services" className="nav-underline">Services</Link>
+                        <Link to="/exercises" className="nav-underline">Exercises</Link>
                         <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
                     </div>
                 </div>

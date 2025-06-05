@@ -21,3 +21,13 @@
   hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out;
 }
 
+/* Custom nav link underline animation for large screens only (Tailwind only) */
+@layer utilities {
+  .nav-underline::after {
+    content: '';
+  }
+}
+
+.nav-underline {
+  @apply text-slate-200 transition-colors duration-200 ease-in-out relative no-underline lg:relative lg:after:absolute lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:bottom-0 lg:after:h-0.5 lg:after:w-0 lg:after:bg-fuchsia-400 lg:after:transition-all lg:after:duration-300 lg:hover:after:w-full lg:after:origin-center lg:hover:text-fuchsia-400
+}
