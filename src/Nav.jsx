@@ -1,8 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-function Nav() {
+function Nav({ user, onSignOut }) {
     const [open, setOpen] = useState(false)
+    const [dropdown, setDropdown] = useState(false)
+    const navigate = useNavigate()
+
+    const handleProfileClick = () => setDropdown((d) => !d)
+    const handleSignOutClick = async () => {
+        setDropdown(false)
+        await onSignOut()
+        navigate('/')
+    }
     return (
         <nav className="bg-slate-800 fixed top-0 left-0 right-0 shadow-lg z-50">
             <div className="container mx-auto px-4">
@@ -33,7 +42,30 @@ function Nav() {
                         <Link to="/tutorials" className="nav-underline">Tutorials</Link>
                         <Link to="/services" className="nav-underline">Services</Link>
                         <Link to="/exercises" className="nav-underline">Exercises</Link>
-                        <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
+                        {!user ? (
+                            <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
+                        ) : (
+                            <div className="relative">
+                                <button onClick={handleProfileClick} className="flex items-center focus:outline-none">
+                                    <img
+                                        src={user.photoURL || '/src/assets/react.svg'}
+                                        alt="Profile"
+                                        className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow"
+                                    />
+                                </button>
+                                {dropdown && (
+                                    <div className="absolute right-0 mt-2 w-40 bg-slate-700 rounded-lg shadow-lg py-2 z-50 animate-fade-in">
+                                        <div className="px-4 py-2 text-slate-200 text-sm border-b border-slate-600">{user.displayName || 'User'}</div>
+                                        <button
+                                            onClick={handleSignOutClick}
+                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-slate-600 hover:text-fuchsia-200 text-sm"
+                                        >
+                                            Sign Out
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
                 {/* Mobile menu */}
@@ -50,7 +82,14 @@ function Nav() {
                         <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>
                         <Link to="/services" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Services</Link>
                         <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>
-                        <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
+                        {!user ? (
+                            <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
+                        ) : (
+                            <button
+                                onClick={handleSignOutClick}
+                                className="btn1 w-full text-center mt-2"
+                            >Sign Out</button>
+                        )}
                     </div>
                 )}
             </div>

@@ -1,35 +1,39 @@
+import { signInWithPopup } from "firebase/auth";
+import { auth, provider } from "../firebase";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function SignIn() {
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const handleGoogleSignIn = async () => {
+        setError("");
+        try {
+            await signInWithPopup(auth, provider);
+            navigate("/"); // Redirect to homepage on success
+        } catch (err) {
+            setError("Google sign-in failed. Please try again.");
+        }
+    };
     return (
         <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16 flex justify-center items-center min-h-[60vh]">
             <div className="w-full max-w-md bg-slate-800 p-4 sm:p-8 rounded-lg shadow-lg">
                 <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">Sign In</h1>
-                <form className="space-y-4">
-                    <div>
-                        <label className="block text-sm font-medium mb-2">Email</label>
-                        <input
-                            type="email"
-                            className="w-full bg-slate-700 text-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-                            placeholder="Enter your email"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-sm font-medium mb-2">Password</label>
-                        <input
-                            type="password"
-                            className="w-full bg-slate-700 text-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-                            placeholder="Enter your password"
-                        />
-                    </div>
-                    <button type="submit" className="w-full btn1">
-                        Sign In
-                    </button>
-                    <p className="text-center text-sm text-slate-400 mt-4">
-                        Don't have an account? <a href="#" className="text-fuchsia-400 hover:text-fuchsia-300">Sign up</a>
-                    </p>
-                </form>
+                <button
+                    type="button"
+                    onClick={handleGoogleSignIn}
+                    className="w-full flex items-center justify-center gap-2 bg-white text-slate-800 font-semibold rounded-lg py-2 px-4 shadow hover:bg-slate-100 transition mb-4"
+                >
+                    <img src="/src/assets/google.svg" alt="Google" className="w-6 h-6" />
+                    Sign in with Google
+                </button>
+                {error && <div className="text-red-400 text-center mb-2">{error}</div>}
+                <div className="text-center text-sm text-slate-400 mt-4">
+                    {`Don't have an account? `}<span className="text-fuchsia-400">Sign up with Google</span>
+                </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default SignIn
+export default SignIn;
