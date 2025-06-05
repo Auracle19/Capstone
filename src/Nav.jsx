@@ -39,9 +39,9 @@ function Nav({ user, onSignOut }) {
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
                         <Link to="/" className="nav-underline">Home</Link>
-                        <Link to="/tutorials" className="nav-underline">Tutorials</Link>
+                        {user && <Link to="/tutorials" className="nav-underline">Tutorials</Link>}
                         <Link to="/services" className="nav-underline">Services</Link>
-                        <Link to="/exercises" className="nav-underline">Exercises</Link>
+                        {user && <Link to="/exercises" className="nav-underline">Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
                         ) : (
@@ -79,9 +79,9 @@ function Nav({ user, onSignOut }) {
                             />
                         </div>
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
-                        <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>
+                        {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
                         <Link to="/services" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Services</Link>
-                        <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>
+                        {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
                         ) : (
