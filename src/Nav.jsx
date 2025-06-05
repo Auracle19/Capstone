@@ -9,7 +9,7 @@ function Nav() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link to="/" className="text-fuchsia-500 font-bold text-xl hover:text-fuchsia-400">
-                        LearnDev
+                        LearnDev    
                     </Link>
                     {/* Hamburger menu for mobile */}
                     <button className="sm:hidden ml-2 text-slate-200 focus:outline-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
@@ -29,7 +29,7 @@ function Nav() {
                     </div>
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-6">
-                        <Link to="/" className="text-slate-200 hover:text-fuchsia-400">Home</Link>
+                        <Link to="/" className="text-slate-200 hover:text-fuchsia-400 linkS">Home</Link>
                         <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400">Tutorials</Link>
                         <Link to="/services" className="text-slate-200 hover:text-fuchsia-400">Services</Link>
                         <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400">Exercises</Link>

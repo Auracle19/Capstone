@@ -9,3 +9,7 @@
   @apply border-2 border-fuchsia-600 text-fuchsia-600 p-8 rounded-4xl py-1 hover:border-fuchsia-400 
   hover:text-fuchsia-400 cursor-pointer
 }
+
+.linkS {
+  @apply underline underline-offset-4 decoration-fuchsia-400 decoration-2 transition-all duration-500 ease-in-out lg:no-underline lg:after:content-[''] lg:after:absolute lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:bottom-0 lg:after:h-0.5 lg:after:w-0 lg:after:bg-fuchsia-400 lg:after:transition-all lg:after:duration-400 lg:group-hover:after:w-full lg:after:origin-center
+}
