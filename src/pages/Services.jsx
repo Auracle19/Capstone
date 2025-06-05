@@ -6,22 +6,22 @@ function Services() {
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">One-on-One Mentoring</h3>
                     <p className="mb-2 sm:mb-4 text-center">Get personalized guidance from experienced developers.</p>
-                    <button className="btn1 w-full lg:w-full">Learn More</button>
+                    <button className="btn1 w-2 lg:w-35">Learn More</button>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Code Review</h3>
                     <p className="mb-2 sm:mb-4 text-center">Get expert feedback on your code and projects.</p>
-                    <button className="btn1 w-full lg:w-full">Learn More</button>
+                    <button className="btn1 w-2 lg:w-35">Learn More</button>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Project Assistance</h3>
                     <p className="mb-2 sm:mb-4 text-center">Get help with your coding projects and assignments.</p>
-                    <button className="btn1 w-full lg:w-full">Learn More</button>
+                    <button className="btn1 w-2 lg:w-35">Learn More</button>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Career Guidance</h3>
                     <p className="mb-2 sm:mb-4 text-center">Get advice on your programming career path.</p>
-                    <button className="btn1 w-full lg:w-full">Learn More</button>
+                    <button className="btn1 w-2 lg:w-35">Learn More</button>
                 </div>
             </div>
         </div>

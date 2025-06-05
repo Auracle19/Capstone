@@ -9,7 +9,7 @@ function Nav() {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <Link to="/" className="text-fuchsia-500 font-bold text-xl hover:text-fuchsia-400">
-                        CodeCraft
+                        LearnDev
                     </Link>
                     {/* Hamburger menu for mobile */}
                     <button className="sm:hidden ml-2 text-slate-200 focus:outline-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
