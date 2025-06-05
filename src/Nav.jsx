@@ -18,22 +18,22 @@ function Nav() {
                         </svg>
                     </button>
                     {/* Search Bar */}
-                    <div className="hidden sm:block flex-1 max-w-md mx-4">
+                    <div className="hidden sm:block flex-1 max-w-[140px] md:max-w-[180px] lg:max-w-md mx-2 md:mx-4">
                         <div className="relative">
                             <input
                                 type="text"
                                 placeholder="Search..."
-                                className="w-full bg-slate-700 text-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+                                className="w-full bg-slate-700 text-slate-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 text-sm md:text-base"
                             />
                         </div>
                     </div>
                     {/* Navigation Links */}
-                    <div className="hidden sm:flex items-center gap-6">
-                        <Link to="/" className="text-slate-200 linkS">Home</Link>
-                        <Link to="/tutorials" className="text-slate-200 linkS">Tutorials</Link>
-                        <Link to="/services" className="text-slate-200 linkS">Services</Link>
-                        <Link to="/exercises" className="text-slate-200 linkS">Exercises</Link>
-                        <Link to="/signin" className="hoverbtn">Sign In</Link>
+                    <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
+                        <Link to="/" className="text-slate-200 lg:linkS no-underline">Home</Link>
+                        <Link to="/tutorials" className="text-slate-200 lg:linkS no-underline">Tutorials</Link>
+                        <Link to="/services" className="text-slate-200 lg:linkS no-underline">Services</Link>
+                        <Link to="/exercises" className="text-slate-200 lg:linkS no-underline">Exercises</Link>
+                        <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
                     </div>
                 </div>
                 {/* Mobile menu */}
