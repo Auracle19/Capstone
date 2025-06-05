@@ -8,7 +8,7 @@ function Exercises() {
                     <p className="mb-2 sm:mb-4">Start with basic programming challenges.</p>
                     <div className="flex justify-between items-center mt-auto">
                         <span className="text-slate-400">10 exercises</span>
-                        <button className="btn1">Start</button>
+                        <button className="hoverbtn">Start</button>
                     </div>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col">
@@ -16,7 +16,7 @@ function Exercises() {
                     <p className="mb-2 sm:mb-4">Tackle more complex programming problems.</p>
                     <div className="flex justify-between items-center mt-auto">
                         <span className="text-slate-400">15 exercises</span>
-                        <button className="btn1">Start</button>
+                        <button className="hoverbtn">Start</button>
                     </div>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col">
@@ -24,7 +24,7 @@ function Exercises() {
                     <p className="mb-2 sm:mb-4">Challenge yourself with advanced algorithms.</p>
                     <div className="flex justify-between items-center mt-auto">
                         <span className="text-slate-400">8 exercises</span>
-                        <button className="btn1">Start</button>
+                        <button className="hoverbtn">Start</button>
                     </div>
                 </div>
             </div>

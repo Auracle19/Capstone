@@ -29,11 +29,11 @@ function Nav() {
                     </div>
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-6">
-                        <Link to="/" className="text-slate-200 hover:text-fuchsia-400 linkS">Home</Link>
-                        <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400">Tutorials</Link>
-                        <Link to="/services" className="text-slate-200 hover:text-fuchsia-400">Services</Link>
-                        <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400">Exercises</Link>
-                        <Link to="/signin" className="btn1">Sign In</Link>
+                        <Link to="/" className="text-slate-200 linkS">Home</Link>
+                        <Link to="/tutorials" className="text-slate-200 linkS">Tutorials</Link>
+                        <Link to="/services" className="text-slate-200 linkS">Services</Link>
+                        <Link to="/exercises" className="text-slate-200 linkS">Exercises</Link>
+                        <Link to="/signin" className="hoverbtn">Sign In</Link>
                     </div>
                 </div>
                 {/* Mobile menu */}

@@ -6,17 +6,17 @@ function Tutorials() {
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">JavaScript Basics</h3>
                     <p className="mb-2 sm:mb-4 text-center">Learn the fundamentals of JavaScript programming.</p>
-                    <button className="btn1 lg:w-35">Start Learning</button>
+                    <button className="hoverbtn">Learn More</button>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">React Essentials</h3>
                     <p className="mb-2 sm:mb-4 text-center">Master modern React development.</p>
-                    <button className="btn1  lg:w-35">Start Learning</button>
+                    <button className="hoverbtn">Learn More</button>
                 </div>
                 <div className="bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center">
                     <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Web Development</h3>
                     <p className="mb-2 sm:mb-4 text-center">Build responsive and modern websites.</p>
-                    <button className="btn1 lg:w-35">Start Learning</button>
+                    <button className="hoverbtn">Learn More</button>
                 </div>
             </div>
         </div>
