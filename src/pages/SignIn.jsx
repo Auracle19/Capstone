@@ -1,8 +1,8 @@
 function SignIn() {
     return (
-        <div className="container mx-auto p-4 mt-16">
-            <div className="max-w-md mx-auto bg-slate-800 p-8 rounded-lg shadow-lg">
-                <h1 className="text-3xl font-bold mb-6 text-center">Sign In</h1>
+        <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16 flex justify-center items-center min-h-[60vh]">
+            <div className="w-full max-w-md bg-slate-800 p-4 sm:p-8 rounded-lg shadow-lg">
+                <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">Sign In</h1>
                 <form className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium mb-2">Email</label>
