@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+
+#root {
+  @apply w-full block
+}
+
+.btn1 {
+  @apply border-2 border-fuchsia-600 text-fuchsia-600 p-2 rounded-4xl py-1 hover:border-fuchsia-400 
+  hover:text-fuchsia-400 cursor-pointer
+}
