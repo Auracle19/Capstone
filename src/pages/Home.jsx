@@ -44,11 +44,6 @@ function Home() {
                     <span className="font-bold text-lg">Powered by AI</span>
                     <span className="text-sm">Ask your personal AI assistant anytime you need help.</span>
                 </div>
-                <div className="flex flex-col items-center gap-2">
-                    <span className="text-3xl mb-1">{'<>'}</span>
-                    <span className="font-bold text-lg">Build Real Projects</span>
-                    <span className="text-sm">Create your own projects with our coding playground.</span>
-                </div>
             </div>
         </div>
     )
