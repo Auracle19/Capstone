@@ -48,9 +48,9 @@ function Nav({ user, onSignOut }) {
                             <div className="relative">
                                 <button onClick={handleProfileClick} className="flex items-center focus:outline-none">
                                     <img
-                                        src={user.photoURL || '/src/assets/react.svg'}
+                                        src={user.photoURL || '/public/assets/react.svg'}
                                         alt="Profile"
-                                        className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow"
+                                        className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow cursor-pointer"
                                     />
                                 </button>
                                 {dropdown && (
@@ -58,7 +58,7 @@ function Nav({ user, onSignOut }) {
                                         <div className="px-4 py-2 text-slate-200 text-sm border-b border-slate-600">{user.displayName || 'User'}</div>
                                         <button
                                             onClick={handleSignOutClick}
-                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-slate-600 hover:text-fuchsia-200 text-sm"
+                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-fuchsia-500 hover:text-white text-sm cursor-pointer font-semibold"
                                         >
                                             Sign Out
                                         </button>
