@@ -39,16 +39,16 @@ function Nav({ user, onSignOut }) {
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
                         <Link to="/" className="nav-underline">Home</Link>
-                        {user && <Link to="/tutorials" className="nav-underline">Tutorials</Link>}
+                        {user ? <Link to="/tutorials" className="nav-underline">Tutorials</Link> : null}
                         <Link to="/services" className="nav-underline">Services</Link>
-                        {user && <Link to="/exercises" className="nav-underline">Exercises</Link>}
+                        {user ? <Link to="/exercises" className="nav-underline">Exercises</Link> : null}
                         {!user ? (
                             <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
                         ) : (
                             <div className="relative">
                                 <button onClick={handleProfileClick} className="flex items-center focus:outline-none">
                                     <img
-                                        src={user.photoURL || '/public/assets/react.svg'}
+                                        src={user.photoURL || '/assets/react.svg'}
                                         alt="Profile"
                                         className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow cursor-pointer"
                                     />
@@ -79,9 +79,9 @@ function Nav({ user, onSignOut }) {
                             />
                         </div>
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
-                        {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
+                        {user ? <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link> : null}
                         <Link to="/services" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Services</Link>
-                        {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
+                        {user ? <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link> : null}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
                         ) : (
