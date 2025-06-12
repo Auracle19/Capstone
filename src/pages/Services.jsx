@@ -1,3 +1,5 @@
+// Services page. Lists AI-powered services offered by the app.
+
 function Services() {
     return (
         <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16">

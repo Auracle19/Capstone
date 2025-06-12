@@ -1,3 +1,6 @@
+// Main application entry point. Sets up routes and authentication state.
+// Uses PrivateRoute to protect certain pages for signed-in users only.
+
 import './index.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './Nav'

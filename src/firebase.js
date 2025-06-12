@@ -1,3 +1,6 @@
+// Firebase configuration and authentication setup.
+// Exports auth and Google provider for use in the app.
+
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 

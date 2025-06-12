@@ -1,3 +1,6 @@
+// Tutorials page. Shows cards for each front-end technology.
+// Uses local SVGs for tech logos.
+
 function Tutorials() {
     return (
         <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16">
@@ -44,7 +47,7 @@ function Tutorials() {
                     <img src="/assets/tailwindcss.svg" alt="Tailwind CSS Logo" className="w-14 h-14 mb-3" />
                     <h3 className="text-lg sm:text-xl font-bold mb-2 text-fuchsia-400">Tailwind CSS</h3>
                     <p className="mb-4 text-center text-slate-300">Build modern UIs efficiently with Tailwind CSS.</p>
-                    <button className="hoverbtn px-6 py-1 text-base rounded-full flex items-center gap-2">Learn More <span className="text-lg">→</span></button>
+                    <button href="https://www.w3schools.com/html/default.asp" className="hoverbtn px-6 py-1 text-base rounded-full flex items-center gap-2">Learn More <span className="text-lg">→</span></button>
                 </div>
             </div>
         </div>

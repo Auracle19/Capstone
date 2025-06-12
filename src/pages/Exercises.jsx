@@ -1,3 +1,5 @@
+// Exercises page. Displays coding exercise categories.
+
 function Exercises() {
     return (
         <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16">

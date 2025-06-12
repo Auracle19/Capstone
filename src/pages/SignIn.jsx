@@ -1,3 +1,6 @@
+// Sign In page. Handles Google sign-in and error display.
+// Redirects to homepage on successful sign-in.
+
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
 import { useState } from "react";
@@ -22,9 +25,9 @@ function SignIn() {
                 <button
                     type="button"
                     onClick={handleGoogleSignIn}
-                    className="w-full flex items-center justify-center gap-2 bg-white text-slate-800 font-semibold rounded-lg py-2 px-4 shadow hover:bg-slate-100 transition mb-4 cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 bg-white text-slate-800 font-semibold rounded-lg py-2 px-4 shadow hover:bg-slate-100 transition mb-4"
                 >
-                    <img src="/assets/google.svg" alt="Google" className="w-6 h-6" />
+                    <img src="/src/assets/google.svg" alt="Google" className="w-6 h-6" />
                     Sign in with Google
                 </button>
                 {error && <div className="text-red-400 text-center mb-2">{error}</div>}

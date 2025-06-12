@@ -1,3 +1,6 @@
+// Navigation bar component. Handles navigation links, user profile, and sign out.
+// Shows/hides links based on authentication state.
+
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -39,18 +42,18 @@ function Nav({ user, onSignOut }) {
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
                         <Link to="/" className="nav-underline">Home</Link>
-                        {user ? <Link to="/tutorials" className="nav-underline">Tutorials</Link> : null}
+                        {user && <Link to="/tutorials" className="nav-underline">Tutorials</Link>}
                         <Link to="/services" className="nav-underline">Services</Link>
-                        {user ? <Link to="/exercises" className="nav-underline">Exercises</Link> : null}
+                        {user && <Link to="/exercises" className="nav-underline">Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
                         ) : (
                             <div className="relative">
                                 <button onClick={handleProfileClick} className="flex items-center focus:outline-none">
                                     <img
-                                        src={user.photoURL || '/assets/react.svg'}
+                                        src={user.photoURL || '/src/assets/react.svg'}
                                         alt="Profile"
-                                        className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow cursor-pointer"
+                                        className="w-9 h-9 rounded-full border-2 border-fuchsia-400 shadow"
                                     />
                                 </button>
                                 {dropdown && (
@@ -58,7 +61,7 @@ function Nav({ user, onSignOut }) {
                                         <div className="px-4 py-2 text-slate-200 text-sm border-b border-slate-600">{user.displayName || 'User'}</div>
                                         <button
                                             onClick={handleSignOutClick}
-                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-fuchsia-500 hover:text-white text-sm cursor-pointer font-semibold"
+                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-slate-600 hover:text-fuchsia-200 text-sm"
                                         >
                                             Sign Out
                                         </button>
@@ -79,9 +82,9 @@ function Nav({ user, onSignOut }) {
                             />
                         </div>
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
-                        {user ? <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link> : null}
+                        {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
                         <Link to="/services" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Services</Link>
-                        {user ? <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link> : null}
+                        {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
                         ) : (
