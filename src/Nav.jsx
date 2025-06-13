@@ -15,6 +15,7 @@ function Nav({ user, onSignOut }) {
         await onSignOut()
         navigate('/')
     }
+
     return (
         <nav className="bg-slate-800 fixed top-0 left-0 right-0 shadow-lg z-50">
             <div className="container mx-auto px-4">
@@ -43,7 +44,6 @@ function Nav({ user, onSignOut }) {
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
                         <Link to="/" className="nav-underline">Home</Link>
                         {user && <Link to="/tutorials" className="nav-underline">Tutorials</Link>}
-                        <Link to="/services" className="nav-underline">Services</Link>
                         {user && <Link to="/exercises" className="nav-underline">Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
@@ -83,7 +83,6 @@ function Nav({ user, onSignOut }) {
                         </div>
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
                         {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
-                        <Link to="/services" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Services</Link>
                         {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>

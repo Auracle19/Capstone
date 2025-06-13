@@ -6,7 +6,6 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './Nav'
 import Home from './pages/Home'
 import Tutorials from './pages/Tutorials'
-import Services from './pages/Services'
 import Exercises from './pages/Exercises'
 import SignIn from './pages/SignIn'
 import { useEffect, useState } from 'react'
@@ -47,7 +46,6 @@ function App() {
             <Exercises />
           </PrivateRoute>
         } />
-        <Route path="/services" element={<Services />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
     </>
