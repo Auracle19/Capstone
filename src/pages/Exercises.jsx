@@ -1,37 +1,59 @@
-// Exercises page. Displays coding exercise categories.
+import { useState } from "react";
 
 function Exercises() {
-    return (
-        <div className="exercises-container mt-20 sm:mt-16">
-            <h1 className="exercises-title">Coding Exercises</h1>
-            <div className="exercises-grid">
-                <div className="exercise-card">
-                    <h3 className="exercise-card-title">Beginner</h3>
-                    <p className="exercise-card-desc">Start with basic programming challenges.</p>
-                    <div className="exercise-card-footer">
-                        <span className="exercise-card-count">10 exercises</span>
-                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
-                    </div>
-                </div>
-                <div className="exercise-card">
-                    <h3 className="exercise-card-title">Intermediate</h3>
-                    <p className="exercise-card-desc">Tackle more complex programming problems.</p>
-                    <div className="exercise-card-footer">
-                        <span className="exercise-card-count">15 exercises</span>
-                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
-                    </div>
-                </div>
-                <div className="exercise-card">
-                    <h3 className="exercise-card-title">Advanced</h3>
-                    <p className="exercise-card-desc">Challenge yourself with advanced algorithms.</p>
-                    <div className="exercise-card-footer">
-                        <span className="exercise-card-count">8 exercises</span>
-                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+	const [levelhtml, setlevelhtml] = useState(false);
+
+	return (
+		<div className="exercises-container mt-20 sm:mt-16">
+			<h1 className="exercises-title">Coding Exercises</h1>
+			<div className="flex flex-wrap justify-center gap-8 mb-8">
+				{/* HTML Card */}
+				<button
+					className="flex flex-col items-center w-36 hover:scale-105 transition-transform duration-200"
+					onClick={() => setlevelhtml((v) => !v)}
+				>
+					<img
+						src="/assets/html.svg"
+						alt="HTML Logo"
+						className="w-20 h-20 mx-auto drop-shadow-lg hover:drop-shadow-orange-600 transition-shadow ease-in-out duration-300"
+					/>
+					<span className="mt-2 font-bold text-orange-400">HTML</span>
+				</button>
+				{/* CSS Card */}
+				<button className="flex flex-col items-center w-36 hover:scale-105 transition-transform duration-200">
+					<img
+						src="/assets/css.svg"
+						alt="CSS Logo"
+						className="w-20 h-20 mx-auto drop-shadow-lg hover:drop-shadow-blue-600 transition-shadow ease-in-out duration-300"
+					/>
+					<span className="mt-2 font-bold text-blue-400">CSS</span>
+				</button>
+				{/* JS Card */}
+				<button className="flex flex-col items-center w-36 hover:scale-105 transition-transform duration-200">
+					<img
+						src="/assets/javascript.svg"
+						alt="JavaScript Logo"
+						className="w-20 h-20 mx-auto drop-shadow-lg hover:drop-shadow-yellow-600 transition-shadow duration-300 ease-in-out"
+					/>
+					<span className="mt-2 font-bold text-yellow-400">JavaScript</span>
+				</button>
+			</div>
+			{/* HTML Levels Dropdown */}
+			{levelhtml && (
+				<div className="flex flex-col items-center gap-2 mt-4">
+					<button className="btn1h w-40">Beginner</button>
+					<button className="btn1h w-40">Intermediate</button>
+					<button className="btn1h w-40">Advanced</button>
+					<button
+						className="mt-2 text-slate-400 hover:text-fuchsia-400"
+						onClick={() => setlevelhtml(false)}
+					>
+						Close
+					</button>
+				</div>
+			)}
+		</div>
+	);
 }
 
-export default Exercises
+export default Exercises;

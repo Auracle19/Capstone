@@ -10,8 +10,7 @@ html, body {
 }
 
 .btn1 {
-  @apply border-2 border-fuchsia-600 text-fuchsia-600 p-8 rounded-4xl py-1 hover:border-fuchsia-400 
-  hover:text-fuchsia-400 cursor-pointer transition-all duration-300 ease-in-out;
+  @apply border-2 border-fuchsia-600 text-fuchsia-600 p-8 rounded-4xl py-1 hover:border-fuchsia-400 hover:text-fuchsia-400 cursor-pointer transition-all duration-300 ease-in-out;
 }
 
 /* Custom underline animation for .linkS (center-out on hover for lg+) */
@@ -75,45 +74,26 @@ html, body {
 
   /* === Profile.jsx classes === */
   .PMainC {
-    @apply container mx-auto px-4 pt-0 pb-8 mt-6 flex flex-col md:flex-row gap-8 max-w-4xl;
-    padding-top: 64px; /* Add space for nav height (h-16 = 64px) */
+    @apply w-full px-0 pt-[64px] pb-8 flex flex-row gap-8 lg:gap-20 max-w-6xl min-h-screen;
   }
   .PSidebar {
-    @apply w-full md:w-64 bg-slate-800 shadow-lg p-6 flex flex-col items-center mb-6 md:mb-0 rounded-xl z-10 md:fixed md:left-0 md:top-[64px] md:h-[calc(100vh-64px)] md:justify-start ;
-    top: 64px; /* Push below nav (h-16 = 64px) */
-    height: auto;
-    position: relative;
+    @apply bg-slate-800 shadow-lg p-6 flex flex-col items-center justify-start mb-0 w-35 sm:w-49 md:w-56 lg:w-64 xl:w-72 h-auto min-h-screen lg:rounded-none lg:rounded-r-xl;
+    border-radius: 0;
   }
   .PPic {
-    @apply w-24 h-24 rounded-full border-4 border-fuchsia-400 mb-4 shadow;
+    @apply rounded-full border-4 border-fuchsia-400 mb-4 shadow w-16 h-16 sm:w-10 sm:h-10 md:w-18 md:h-18 lg:w-22 lg:h-22 xl:w-25 xl:h-25;
   }
   .PName {
-    @apply font-bold text-lg text-fuchsia-400 mb-2 text-center break-words;
-  }
-  .PSidebarBtns {
-    @apply flex flex-col w-full gap-2 mt-6;
-  }
-  .PSidebarBtn {
-    @apply w-full block text-left font-semibold text-fuchsia-400 px-4 py-2 rounded-lg hover:bg-transparent hover:text-fuchsia-200 transition-all duration-300 ease-in-out cursor-pointer border-0 shadow-none;
-    background: none;
-  }
-  .asideS {
-    @apply w-24 min-w-[72px] max-w-[90px] bg-slate-800 shadow-lg p-2 flex flex-col items-center rounded-xl z-10;
-  }
-  .asideS .PPic {
-    @apply w-10 h-10 mb-2;
-  }
-  .asideS .PName {
-    @apply text-xs mb-1 text-center;
+    @apply font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-fuchsia-400 mb-2 text-left break-words;
   }
   .divA {
     @apply flex flex-col w-full gap-1 mt-2;
   }
   .AA {
-    @apply w-full block text-left text-xs font-semibold text-fuchsia-400 px-2 py-1 rounded hover:bg-transparent hover:text-fuchsia-200 transition-all duration-300 ease-in-out cursor-pointer border-0 shadow-none;
+    @apply w-full block text-center text-lg font-semibold text-fuchsia-400 px-2 py-1 rounded hover:bg-transparent hover:text-fuchsia-200 transition-all duration-300 ease-in-out cursor-pointer border-0 shadow-none sm:text-sm;
   }
   .PContent {
-    @apply flex-1 bg-slate-900 rounded-xl shadow-lg p-8 min-h-[300px] md:ml-0;
+    @apply flex-1 bg-slate-900 rounded-xl shadow-lg p-8 min-h-[300px] flex items-center justify-center;
   }
   .PSectionTitle {
     @apply font-bold text-lg text-fuchsia-400 mb-4;
@@ -127,45 +107,6 @@ html, body {
   .PNote {
     @apply text-slate-500 italic;
   }
-  @media (min-width: 768px) {
-    .PMainC {
-      @apply flex-row;
-    }
-    .PSidebar {
-      position: fixed;
-      left: 0;
-      top: 64px;
-      height: calc(100vh - 64px);
-      @apply md:mb-0 md:w-64;
-    }
-    .PContent {
-      @apply md:ml-72;
-    }
-  }
-  @media (max-width: 767px) {
-    .sidebar-sm {
-      width: 90px !important;
-      min-width: 70px;
-      padding: 0.5rem !important;
-    }
-    .sidebar-sm .PPic {
-      width: 2.5rem !important;
-      height: 2.5rem !important;
-    }
-    .sidebar-sm .PName {
-      font-size: 0.85rem !important;
-      margin-bottom: 0.25rem !important;
-    }
-    .sidebar-sm .divA {
-      gap: 0.25rem !important;
-      margin-top: 0.5rem !important;
-    }
-    .sidebar-sm .AA {
-      font-size: 0.85rem !important;
-      padding: 0.25rem 0.5rem !important;
-    }
-  }
-
 }
 
 /* Custom nav link underline animation for large screens only (Tailwind only) */

@@ -89,6 +89,14 @@ function Nav({ user, onSignOut }) {
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
                         {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
                         {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
+                        {/* Profile links for mobile menu */}
+                        {user && (
+                          <div className="flex flex-col gap-1 mt-2">
+                            <Link to="/profile/edit" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Edit Profile</Link>
+                            <Link to="/profile/progress" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Progress</Link>
+                            <Link to="/profile/settings" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Settings</Link>
+                          </div>
+                        )}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
                         ) : (
