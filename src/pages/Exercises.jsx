@@ -2,31 +2,31 @@
 
 function Exercises() {
     return (
-        <div className="container mx-auto px-4 py-8 mt-20 sm:mt-16">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center">Coding Exercises</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
-                <div className="bg-slate-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg flex flex-col min-h-[220px] md:min-h-[240px]">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Beginner</h3>
-                    <p className="mb-2 sm:mb-4">Start with basic programming challenges.</p>
-                    <div className="flex justify-between items-center mt-auto">
-                        <span className="text-slate-400">10 exercises</span>
-                        <button className="hoverbtn">Start</button>
+        <div className="exercises-container mt-20 sm:mt-16">
+            <h1 className="exercises-title">Coding Exercises</h1>
+            <div className="exercises-grid">
+                <div className="exercise-card">
+                    <h3 className="exercise-card-title">Beginner</h3>
+                    <p className="exercise-card-desc">Start with basic programming challenges.</p>
+                    <div className="exercise-card-footer">
+                        <span className="exercise-card-count">10 exercises</span>
+                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
                     </div>
                 </div>
-                <div className="bg-slate-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg flex flex-col min-h-[220px] md:min-h-[240px]">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Intermediate</h3>
-                    <p className="mb-2 sm:mb-4">Tackle more complex programming problems.</p>
-                    <div className="flex justify-between items-center mt-auto">
-                        <span className="text-slate-400">15 exercises</span>
-                        <button className="hoverbtn">Start</button>
+                <div className="exercise-card">
+                    <h3 className="exercise-card-title">Intermediate</h3>
+                    <p className="exercise-card-desc">Tackle more complex programming problems.</p>
+                    <div className="exercise-card-footer">
+                        <span className="exercise-card-count">15 exercises</span>
+                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
                     </div>
                 </div>
-                <div className="bg-slate-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg flex flex-col min-h-[220px] md:min-h-[240px]">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400">Advanced</h3>
-                    <p className="mb-2 sm:mb-4">Challenge yourself with advanced algorithms.</p>
-                    <div className="flex justify-between items-center mt-auto">
-                        <span className="text-slate-400">8 exercises</span>
-                        <button className="hoverbtn">Start</button>
+                <div className="exercise-card">
+                    <h3 className="exercise-card-title">Advanced</h3>
+                    <p className="exercise-card-desc">Challenge yourself with advanced algorithms.</p>
+                    <div className="exercise-card-footer">
+                        <span className="exercise-card-count">8 exercises</span>
+                        <button className="border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out">Start</button>
                     </div>
                 </div>
             </div>

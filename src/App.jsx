@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Tutorials from './pages/Tutorials'
 import Exercises from './pages/Exercises'
 import SignIn from './pages/SignIn'
+import Profile from './pages/Profile'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
@@ -46,6 +47,7 @@ function App() {
             <Exercises />
           </PrivateRoute>
         } />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
     </>

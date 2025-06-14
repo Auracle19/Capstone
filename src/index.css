@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 #root {
   @apply w-full block;
@@ -12,13 +16,97 @@
 
 /* Custom underline animation for .linkS (center-out on hover for lg+) */
 .linkS {
-  @apply font-semibold underline underline-offset-4 decoration-fuchsia-400 decoration-2 transition-all duration-300 ease-in-out lg:no-underline lg:after:content-[''] lg:after:absolute lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:bottom-0 lg:after:h-0.5 lg:after:w-0 lg:after:bg-fuchsia-600 lg:after:transition-all lg:after:duration-300 lg:group-hover:after:w-full lg:after:origin-center hover:text-fuchsia-600;
+  @apply font-semibold underline underline-offset-4 decoration-fuchsia-400 decoration-2 transition-all duration-300 ease-in-out lg:no-underline lg:after:content-[''] lg:after:absolute lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:bottom-0 lg:after:h-0.5 lg:after:w-0 lg:after:bg-fuchsia-600 lg:after:transition-all lg:after:duration-300 lg:group-hover:after:w-full lg:after:origin-center hover:text-fuchsia-600 cursor-pointer;
 }
 
 /* Custom hover button style */
-.hoverbtn {
-  @apply border-2 font-semibold border-fuchsia-400 text-fuchsia-400 p-8 rounded-4xl py-1 hover:bg-fuchsia-600 hover:border-fuchsia-600
-  hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out;
+@layer components {
+  .btn1h {
+    @apply border-2 font-semibold border-fuchsia-400 text-fuchsia-400 min-w-25 rounded-full flex items-center justify-center hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out;
+  }
+
+  /* === Home.jsx classes === */
+  .imgHeroBg {
+    @apply block w-[100vw] max-w-[100vw] h-[320px] opacity-80 object-cover object-center m-0 p-0;
+  }
+  @media (min-width: 640px) {
+    .imgHeroBg {
+      @apply h-[400px];
+    }
+  }
+  @media (min-width: 768px) {
+    .imgHeroBg {
+      @apply h-[480px];
+    }
+  }
+  .cardS {
+    @apply flex flex-col gap-6 mb-16;
+  }
+  .cardF {
+    @apply bg-slate-800 p-4 sm:p-6 rounded-lg shadow-lg flex flex-col items-center;
+  }
+  .titleF {
+    @apply font-bold text-lg text-fuchsia-400;
+  }
+  .heroT {
+    @apply text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 text-center text-white drop-shadow-xl tracking-tight;
+  }
+  .heroD {
+    @apply text-lg sm:text-xl md:text-2xl max-w-2xl text-center text-fuchsia-200 font-medium drop-shadow-lg;
+  }
+  .mainC {
+    @apply container mx-auto px-4 pt-0 pb-8;
+  }
+  .mtHero {
+    @apply mt-6 sm:mt-10 md:mt-14;
+  }
+  .featuresS {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-slate-200 mb-24;
+  }
+  .featureB {
+    @apply flex flex-col items-center gap-4;
+  }
+  .featureT {
+    @apply font-bold text-lg;
+  }
+  .featureD {
+    @apply text-sm;
+  }
+
+  /* === Profile.jsx classes === */
+  .PMainC {
+    @apply container mx-auto px-4 pt-0 pb-8 mt-6 sm:mt-10 md:mt-14 flex flex-col md:flex-row gap-8 max-w-4xl;
+  }
+  .PSidebar {
+    @apply w-full md:w-64 bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-center mb-6 md:mb-0 md:fixed md:left-0 md:top-0 md:h-full md:justify-start z-10;
+  }
+  .PPic {
+    @apply w-24 h-24 rounded-full border-4 border-fuchsia-400 mb-4 shadow;
+  }
+  .PName {
+    @apply font-bold text-lg text-fuchsia-400 mb-2 text-center break-words;
+  }
+  .PSidebarBtns {
+    @apply flex flex-col w-full gap-2 mt-6;
+  }
+  .PSidebarBtn {
+    @apply border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-4 py-2 rounded-lg hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 transition-all duration-300 ease-in-out cursor-pointer;
+  }
+  .PContent {
+    @apply flex-1 bg-slate-900 rounded-xl shadow-lg p-8 min-h-[300px] md:ml-72;
+  }
+  .PSectionTitle {
+    @apply font-bold text-lg text-fuchsia-400 mb-4;
+  }
+  .PEmail {
+    @apply text-slate-400 mb-2;
+  }
+  .PUserId {
+    @apply text-xs text-slate-500 mb-2;
+  }
+  .PNote {
+    @apply text-slate-500 italic;
+  }
 }
 
 /* Custom nav link underline animation for large screens only (Tailwind only) */
@@ -30,4 +118,68 @@
 
 .nav-underline {
   @apply text-slate-200 transition-colors duration-200 ease-in-out relative no-underline lg:relative lg:after:absolute lg:after:left-1/2 lg:after:-translate-x-1/2 lg:after:bottom-0 lg:after:h-0.5 lg:after:w-0 lg:after:bg-fuchsia-400 lg:after:transition-all lg:after:duration-300 lg:hover:after:w-full lg:after:origin-center lg:hover:text-fuchsia-400
+}
+
+/* === Exercises.jsx classes === */
+.exercises-container {
+  @apply container mx-auto px-4 py-8;
+}
+.exercises-title {
+  @apply text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center;
+}
+.exercises-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto;
+}
+.exercise-card {
+  @apply bg-slate-800 p-4 sm:p-6 md:p-8 rounded-lg shadow-lg flex flex-col min-h-[220px] md:min-h-[240px];
+}
+.exercise-card-title {
+  @apply text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-fuchsia-400;
+}
+.exercise-card-desc {
+  @apply mb-2 sm:mb-4;
+}
+.exercise-card-footer {
+  @apply flex justify-between items-center mt-auto;
+}
+.exercise-card-count {
+  @apply text-slate-400;
+}
+
+/* === Tutorials.jsx classes === */
+.tutorials-container {
+  @apply container mx-auto px-4 py-8;
+}
+.tutorials-title {
+  @apply text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-center;
+}
+.tutorials-subtitle {
+  @apply text-lg text-slate-400 mb-8 text-center;
+}
+.tutorials-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+.tutorial-card {
+  @apply bg-gradient-to-b from-slate-800 to-slate-900 p-6 rounded-xl shadow-xl flex flex-col items-center transition-transform duration-300 hover:scale-105 hover:shadow-2xl;
+}
+.tutorial-logo {
+  @apply w-14 h-14 mb-3;
+}
+.tutorial-card-title {
+  @apply text-lg sm:text-xl font-bold mb-2 text-fuchsia-400;
+}
+.tutorial-card-desc {
+  @apply mb-4 text-center text-slate-300;
+}
+.tutorial-card-btn {
+  @apply border-2 font-semibold border-fuchsia-400 text-fuchsia-400 px-6 py-1 rounded-full flex items-center gap-2 hover:bg-fuchsia-600 hover:border-fuchsia-600 hover:text-slate-900 cursor-pointer transition-all duration-300 ease-in-out;
+}
+.dd {
+  @apply absolute right-0 mt-2 w-40 bg-slate-700 rounded-lg shadow-lg py-2 z-50;
+}
+.ddbtn {
+  @apply w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-slate-600 hover:text-fuchsia-200 text-sm border-b border-slate-600 cursor-pointer;
+}
+.ddbtn:last-child {
+  @apply border-b-0;
 }

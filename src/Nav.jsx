@@ -46,10 +46,10 @@ function Nav({ user, onSignOut }) {
                         {user && <Link to="/tutorials" className="nav-underline">Tutorials</Link>}
                         {user && <Link to="/exercises" className="nav-underline">Exercises</Link>}
                         {!user ? (
-                            <Link to="/signin" className="hoverbtn lg:p-2">Sign In</Link>
+                            <Link to="/signin" className="btn1h lg:p-2">Sign In</Link>
                         ) : (
                             <div className="relative">
-                                <button onClick={handleProfileClick} className="flex items-center focus:outline-none">
+                                <button onClick={handleProfileClick} className="flex items-center focus:outline-none cursor-pointer">
                                     <img
                                         src={user.photoURL || '/src/assets/react.svg'}
                                         alt="Profile"
@@ -57,11 +57,16 @@ function Nav({ user, onSignOut }) {
                                     />
                                 </button>
                                 {dropdown && (
-                                    <div className="absolute right-0 mt-2 w-40 bg-slate-700 rounded-lg shadow-lg py-2 z-50 animate-fade-in">
-                                        <div className="px-4 py-2 text-slate-200 text-sm border-b border-slate-600">{user.displayName || 'User'}</div>
+                                    <div className="dd">
+                                        <button
+                                            onClick={() => { setDropdown(false); navigate('/profile'); }}
+                                            className="ddbtn"
+                                        >
+                                            {user.displayName || 'User'}
+                                        </button>
                                         <button
                                             onClick={handleSignOutClick}
-                                            className="w-full text-left px-4 py-2 text-fuchsia-400 hover:bg-slate-600 hover:text-fuchsia-200 text-sm"
+                                            className="ddbtn"
                                         >
                                             Sign Out
                                         </button>
