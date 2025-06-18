@@ -9,6 +9,9 @@ import Tutorials from './pages/Tutorials'
 import Exercises from './pages/Exercises'
 import SignIn from './pages/SignIn'
 import Profile from './pages/Profile'
+import HtmlTutorial from './pages/HtmlTutorial'
+import CssTutorial from './pages/CssTutorial'
+import JavascriptTutorial from './pages/JavascriptTutorial'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
@@ -40,6 +43,21 @@ function App() {
         <Route path="/tutorials" element={
           <PrivateRoute user={user}>
             <Tutorials />
+          </PrivateRoute>
+        } />
+        <Route path="/tutorials/html" element={
+          <PrivateRoute user={user}>
+            <HtmlTutorial />
+          </PrivateRoute>
+        } />
+        <Route path="/tutorials/css" element={
+          <PrivateRoute user={user}>
+            <CssTutorial />
+          </PrivateRoute>
+        } />
+        <Route path="/tutorials/javascript" element={
+          <PrivateRoute user={user}>
+            <JavascriptTutorial />
           </PrivateRoute>
         } />
         <Route path="/exercises" element={
