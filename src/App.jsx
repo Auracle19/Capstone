@@ -8,10 +8,10 @@ import Home from './pages/Home'
 import Tutorials from './pages/Tutorials'
 import Exercises from './pages/Exercises'
 import SignIn from './pages/SignIn'
-import Profile from './pages/Profile'
 import HtmlTutorial from './pages/HtmlTutorial'
 import CssTutorial from './pages/CssTutorial'
 import JavascriptTutorial from './pages/JavascriptTutorial'
+import ExercisesLeetCode from './pages/ExercisesLeetCode'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
@@ -60,12 +60,12 @@ function App() {
             <JavascriptTutorial />
           </PrivateRoute>
         } />
-        <Route path="/exercises" element={
+        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/leetcode" element={
           <PrivateRoute user={user}>
-            <Exercises />
+            <ExercisesLeetCode />
           </PrivateRoute>
         } />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/signin" element={<SignIn />} />
       </Routes>
     </>

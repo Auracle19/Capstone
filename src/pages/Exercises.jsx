@@ -1,7 +1,9 @@
 import { useState } from "react";
 
+
 function Exercises() {
 	const [levelhtml, setlevelhtml] = useState(false);
+
 
 	return (
 		<div className="exercises-container mt-20 sm:mt-16">

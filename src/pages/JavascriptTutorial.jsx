@@ -40,7 +40,7 @@ export default function JavascriptTutorial() {
           <section id="syntax" className="mb-10">
             <h2 className="text-2xl font-semibold text-fuchsia-300 mb-2">JavaScript Syntax</h2>
             <LiveHtmlEditor initialCode={`<script>\ndocument.body.innerHTML = '<h1>Hello JavaScript!</h1><p>This is JS in action.</p>'\n<\/script>`} />
-            <p className="text-slate-200">JavaScript syntax includes statements, variables, and functions.</p>
+            <p className="text-slate-900">JavaScript syntax includes statements, variables, and functions.</p>
           </section>
           {/* Add more sections as needed */}
         </div>

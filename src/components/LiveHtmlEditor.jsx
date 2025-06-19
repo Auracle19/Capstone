@@ -14,8 +14,8 @@ export default function LiveHtmlEditor({ initialCode }) {
       />
       <iframe
         className="bg-white rounded p-4 min-h-[60px] shadow-inner w-full"
-        style={{ minHeight: 60, border: 0 }}
-        srcDoc={code}
+        style={{ minHeight: 60, border: 0, color: '#111' }}
+        srcDoc={`<body style='color:#111;'>${code}</body>`}
         sandbox="allow-scripts allow-same-origin"
         title="Live HTML Preview"
       />

@@ -2,8 +2,14 @@
 // Uses local SVGs for tech logos.
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Tutorials() {
+    const [progress, setProgress] = useState(() => {
+      // Example: load from localStorage or default
+      return JSON.parse(localStorage.getItem('htmlProgress') || '{"beginner":false,"intermediate":false,"advanced":false}')
+    });
+
     return (
         <div className="tutorials-container mt-20 sm:mt-16">
             <h1 className="tutorials-title">Tutorials</h1>
