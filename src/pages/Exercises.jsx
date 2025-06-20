@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function Exercises() {
 	const [levelhtml, setlevelhtml] = useState(false);
+	const navigate = useNavigate();
 
 
 	return (
@@ -43,7 +45,7 @@ function Exercises() {
 			{/* HTML Levels Dropdown */}
 			{levelhtml && (
 				<div className="flex flex-col items-center gap-2 mt-4">
-					<button className="btn1h w-40">Beginner</button>
+					<button className="btn1h w-40" onClick={() => navigate('/codequiztest')}>Beginner</button>
 					<button className="btn1h w-40">Intermediate</button>
 					<button className="btn1h w-40">Advanced</button>
 					<button

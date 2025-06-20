@@ -144,15 +144,9 @@ function Nav({ user, onSignOut }) {
                     <Link to="/" className="text-fuchsia-500 font-bold text-xl hover:text-fuchsia-400">
                         LearnDev    
                     </Link>
-                    {/* Hamburger menu for mobile */}
-                    <button className="sm:hidden ml-2 text-slate-200 focus:outline-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
-                        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                    {/* Search Bar */}
-                    <div className="hidden sm:block flex-1 max-w-[140px] md:max-w-[180px] lg:max-w-md mx-2 md:mx-4 relative">
-                        <div className="relative">
+                    {/* Centered Search Bar for sm/md screens */}
+                    <div className="flex-1 flex justify-center sm:justify-center md:justify-center">
+                        <div className="w-full max-w-[180px] md:max-w-[240px] lg:max-w-md relative">
                             <input
                                 type="text"
                                 placeholder="Search..."
@@ -177,6 +171,12 @@ function Nav({ user, onSignOut }) {
                             )}
                         </div>
                     </div>
+                    {/* Hamburger menu for mobile */}
+                    <button className="sm:hidden ml-2 text-slate-200 focus:outline-none" onClick={() => setOpen(!open)} aria-label="Toggle menu">
+                        <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                     {/* Navigation Links */}
                     <div className="hidden sm:flex items-center gap-4 md:gap-5 lg:gap-6">
                         <Link to="/" className="nav-underline">Home</Link>
@@ -216,24 +216,41 @@ function Nav({ user, onSignOut }) {
                 {/* Mobile menu */}
                 {open && (
                     <div className="sm:hidden flex flex-col gap-2 pb-2 animate-fade-in">
+                        {/* Centered Search Bar for mobile */}
                         <div className="flex-1 max-w-md mx-auto w-full mb-2">
                             <input
                                 type="text"
                                 placeholder="Search..."
                                 className="w-full bg-slate-700 text-slate-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
+                                value={search}
+                                onChange={handleSearchChange}
+                                onKeyDown={handleSearchKeyDown}
                             />
+                            {suggestions.length > 0 && (
+                              <ul className="absolute left-0 right-0 bg-slate-800 border border-slate-700 rounded mt-1 z-50">
+                                {suggestions.map((item, idx) => (
+                                  <li key={item.path}>
+                                    <button
+                                      className="w-full text-left px-3 py-2 hover:bg-fuchsia-700/20 text-slate-200"
+                                      onClick={() => { setOpen(false); handleSearchSelect(item.path); }}
+                                    >
+                                      {item.label}
+                                    </button>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
                         </div>
                         <Link to="/" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Home</Link>
                         {user && <Link to="/tutorials" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Tutorials</Link>}
                         {user && <Link to="/exercises" className="text-slate-200 hover:text-fuchsia-400 px-2 py-1" onClick={() => setOpen(false)}>Exercises</Link>}
-                        {/* Profile links for mobile menu */}
-                        {user && (
+                        {/* Profile links for mobile menu - removed Edit Profile, Progress, Settings */}
+                        {/* Only show main profile link if needed */}
+                        {/* {user && (
                           <div className="flex flex-col gap-1 mt-2">
-                            <Link to="/profile/edit" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Edit Profile</Link>
-                            <Link to="/profile/progress" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Progress</Link>
-                            <Link to="/profile/settings" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Settings</Link>
+                            <Link to="/profile" className="text-fuchsia-400 hover:text-fuchsia-200 px-2 py-1" onClick={() => setOpen(false)}>Profile</Link>
                           </div>
-                        )}
+                        )} */}
                         {!user ? (
                             <Link to="/signin" className="btn1 w-full text-center" onClick={() => setOpen(false)}>Sign In</Link>
                         ) : (

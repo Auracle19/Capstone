@@ -12,6 +12,7 @@ import HtmlTutorial from './pages/HtmlTutorial'
 import CssTutorial from './pages/CssTutorial'
 import JavascriptTutorial from './pages/JavascriptTutorial'
 import ExercisesLeetCode from './pages/ExercisesLeetCode'
+import Profile from './pages/Profile'
 import { useEffect, useState } from 'react'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
@@ -67,6 +68,7 @@ function App() {
           </PrivateRoute>
         } />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   )

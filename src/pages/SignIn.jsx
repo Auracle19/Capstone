@@ -15,7 +15,7 @@ function SignIn() {
         const unsubscribe = auth.onAuthStateChanged((user) => {
             setLoading(false);
             if (user) {
-                navigate("/"); // If signed in, go home
+                navigate("/profile"); // If signed in, go to dashboard/profile
             }
         });
         return () => unsubscribe();
@@ -26,7 +26,7 @@ function SignIn() {
         if (!loading && !auth.currentUser) {
             signInWithPopup(auth, provider)
                 .then(() => {
-                    navigate("/");
+                    navigate("/profile");
                 })
                 .catch(() => {
                     navigate("/");
